@@ -18,16 +18,16 @@ function Menu1({ change }) {
     change(false);
   };
 
-  // const sound = new Howl({
-  //   src: ["whoosh-cinematic.mp3"],
-  //   loop: false,
-  //   volume: 1,
-  // });
-  // const Click = new Howl({
-  //   src: ["interface.mp3"],
-  //   loop: false,
-  //   volume: 1,
-  // });
+  const sound = new Howl({
+    src: ["whoosh-cinematic.mp3"],
+    loop: false,
+    volume: 1,
+  });
+  const Click = new Howl({
+    src: ["interface.mp3"],
+    loop: false,
+    volume: 1,
+  });
 
   return (
     <motion.div
@@ -38,20 +38,20 @@ function Menu1({ change }) {
       transition={{ duration: 0.5 }}
     >
       {/* 3D Canvas Component */}
-      <div className="w-[75vw] overflow-hidden p-2 rounded-xl flex justify-center">
+      {/* <div className="w-[75vw] overflow-hidden p-2 rounded-xl flex justify-center">
         <MyCanvasComponent />
-      </div>
+      </div> */}
 
       {/* Menu Options */}
       <div className="text-4xl flex flex-col justify-center items-end pr-10 h-screen w-[35vw] gap-10">
         {menuOptions.map((item, index) => (
           <motion.a
-            // onHoverStart={() => sound.play()}
-            // onHoverEnd={() => sound.stop()}
-            // onClick={() => {
-            //   CloseIt();
-            //   Click.play();
-            // }}
+            onHoverStart={() => sound.play()}
+            onHoverEnd={() => sound.stop()}
+            onClick={() => {
+              CloseIt();
+              Click.play();
+            }}
             key={index}
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
