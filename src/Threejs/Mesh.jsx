@@ -1,5 +1,4 @@
 import React from "react";
-import * as Three from "three";
 import { Canvas } from "@react-three/fiber";
 import {
   MeshReflectorMaterial,
@@ -11,12 +10,27 @@ function Mesh() {
   const texture = useTexture("./ClyBg.png");
 
   return (
-    <mesh castShadow="true" rotation={[0, 1.5, 0]}>
+    <mesh castShadow rotation={[0, 1.5, 0]}>
       <boxGeometry args={[5, 7, 0.02]} />
-      {/* <MeshReflectorMaterial map={texture} s ?/> */}
 
-      <meshStandardMaterial map={texture}  />
+      {/* If you want reflections, use MeshReflectorMaterial. Otherwise, use meshStandardMaterial */}
+      {/* Uncomment and configure the MeshReflectorMaterial if needed */}
+      {/* <MeshReflectorMaterial 
+          map={texture} 
+          blur={[400, 100]} 
+          resolution={1024} 
+          mixBlur={1} 
+          mixStrength={2} 
+          roughness={1} 
+          depthScale={0.5} 
+          minDepthThreshold={0.85} 
+          maxDepthThreshold={1} 
+        /> 
+      */}
+
+      <meshStandardMaterial map={texture} />
     </mesh>
   );
 }
+
 export default Mesh;

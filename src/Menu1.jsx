@@ -38,9 +38,9 @@ function Menu1({ change }) {
       transition={{ duration: 0.5 }}
     >
       {/* 3D Canvas Component */}
-      {/* <div className="w-[75vw] overflow-hidden p-2 rounded-xl flex justify-center">
+      <div className="w-[75vw] overflow-hidden p-2 rounded-xl flex justify-center">
         <MyCanvasComponent />
-      </div> */}
+      </div>
 
       {/* Menu Options */}
       <div className="text-4xl flex flex-col justify-center items-end pr-10 h-screen w-[35vw] gap-10">
