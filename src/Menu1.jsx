@@ -45,12 +45,10 @@ function Menu1({ change }) {
       {/* Menu Options */}
       <div className="text-4xl flex flex-col justify-center items-end pr-10 h-screen w-[35vw] gap-10">
         {menuOptions.map((item, index) => (
-          <motion.a
-            onHoverStart={() => sound.play()}
-            onHoverEnd={() => sound.stop()}
+          <motion.span
             onClick={() => {
               CloseIt();
-              Click.play();
+              sound.play();
             }}
             key={index}
             initial={{ opacity: 0, x: 30 }}
@@ -60,7 +58,7 @@ function Menu1({ change }) {
             <Link to={item.Navlink}>
               <FlipLink>{item.Header}</FlipLink>
             </Link>
-          </motion.a>
+          </motion.span>
         ))}
       </div>
     </motion.div>

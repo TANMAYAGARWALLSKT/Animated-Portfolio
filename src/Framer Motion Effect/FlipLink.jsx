@@ -6,7 +6,7 @@ const FlipLink = ({ children, href }) => {
   const STAGGER = 0.025;
 
   return (
-    <motion.a
+    <motion.span
       initial="initial"
       whileHover="hovered"
       href={href}
@@ -61,7 +61,7 @@ const FlipLink = ({ children, href }) => {
           </motion.span>
         ))}
       </div>
-    </motion.a>
+    </motion.span>
   );
 };
 export default FlipLink;

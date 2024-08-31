@@ -5,13 +5,13 @@ import Splittext from "./Framer Motion Effect/Splittext";
 import { Howl, Howler } from "howler";
 
 // Import audio files
-import boomAudioSrc from "../public/boom-208750.mp3";
-import interfaceAudioSrc from "../public/interface.mp3";
-import loadingAudioSrc from "../public/Loading.mp3";
 
 function Loader() {
   const [RenderPage, setRenderPage] = useState(false);
   const [showLoader, setShowLoader] = useState(true);
+  const boomAudioSrc = "./boom-208750.mp3";
+  const interfaceAudioSrc = "./interface.mp3";
+  const loadingAudioSrc = "./Loading.mp3";
 
   useEffect(() => {
     // Function to preload audio files
