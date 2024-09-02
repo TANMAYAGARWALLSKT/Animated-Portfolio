@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import FlipLink from "./Framer Motion Effect/FlipLink";
+import Footer from "./Footer";
 
 function Project() {
   const projects = [
@@ -11,7 +12,8 @@ function Project() {
       DemoLink: "https://group3cts.vercel.app/",
       CodeLink: "https://github.com/TANMAYAGARWALLSKT/nehul",
       CustomClass: "w-[40%]",
-      CustomClassHeader: "border-b-2 border-t-2 border-white/50",
+      CustomClassHeader:
+        "border-b-2 border-t-2 border-white/50 text-end items-center",
       Video: "./video2.mp4",
     },
     {
@@ -21,7 +23,8 @@ function Project() {
       DemoLink: "https://bubble-game-three-iota.vercel.app/main.html",
       CodeLink: "https://github.com/TANMAYAGARWALLSKT/BubbleGame",
       CustomClass: "w-[46%]",
-      CustomClassHeader: "border-b-2 border-white/50 flex-row-reverse",
+      CustomClassHeader:
+        "border-b-2 border-white/50 flex-row-reverse text-start items-center ",
       Video: "./video2.mp4",
     },
     {
@@ -31,7 +34,7 @@ function Project() {
       DemoLink: "https://manage-income-exp-mmbd.vercel.app/User",
       CodeLink: "https://github.com/TANMAYAGARWALLSKT/Manage-Income---Exp",
       CustomClass: "w-[32%]",
-      CustomClassHeader: "border-b-2 border-white/50",
+      CustomClassHeader: " border-white/50 text-end items-center",
       Video: "./video2.mp4",
     },
   ];
@@ -41,26 +44,23 @@ function Project() {
       initial={{ y: 1000, scale: 0.5, opacity: 0 }}
       animate={{ y: 0, scale: 1, opacity: 1 }}
       transition={{ duration: 1, ease: "circInOut" }}
-      className="w-screen h-full"
+      className=""
     >
-      <h1 className="font-bold text-center mb-8 text-5xl">My Projects</h1>
+      <div className="   text-9xl ClashDisplay-Medium uppercase flex  pt-10 pl-5 pb-8      ">
+        <span className=" ">My Projects</span>
+      </div>
       {projects.map((item, index) => (
         <div
           onMouseEnter={(e) => {
             const video = e.currentTarget.querySelector("video");
             if (video) {
               video.play();
-              video.style.opacity = "1";
             }
           }}
           onMouseLeave={(e) => {
             const video = e.currentTarget.querySelector("video");
             if (video) {
               video.pause();
-              video.currentTime = 0; // Reset video to start
-              setTimeout(() => {
-                video.style.opacity = "0";
-              }, 150); // Slight delay to avoid flicker
             }
           }}
           key={index}
@@ -76,29 +76,28 @@ function Project() {
             muted
             loop
             preload="metadata"
-            style={{ opacity: "0" }} // Initially hide the video
           />
           <span
-            className={`text-4xl flex flex-col text-end gap-5 ${item.CustomClass}`}
+            className={`text-4xl flex flex-col   gap-5 ${item.CustomClass}`}
           >
-            <span className="flex luckiest-guy flex-col">
+            <span className="flex  flex-col ClashDisplay-Medium text-7xl">
               {item.ProjectName}
             </span>
-            <p className="text-sm pl-5 pt-5 font-extralight">
+            <p className="text-sm pl-5 pt-5 ClashDisplay-light">
               {item.Description}
             </p>
-            <div className="flex  justify-center items-center">
+            <div className="flex gap-5  justify-center items-center">
               <a
-                className="font-bold text-2xl  hover:bg-green-800 hover:text-white w-auto rounded-3xl flex justify-center items-center"
+                className=" text-2xl  hover:bg-green-800 hover:text-white w-auto rounded-3xl flex justify-center items-center px-5 py-1 ClashDisplay-Extralight "
                 href={item.CodeLink}
-                aria-label={`View code for ${item.ProjectName}`}
+                aria-label={`View code for ${item.CodeLink}`}
               >
                 Code
               </a>
               <a
-                className="font-bold  text-2xl hover:bg-red-600 flex justify-center text-center items-center hover:text-white w-auto rounded-3xl"
+                className="  text-2xl hover:bg-red-600 flex  ClashDisplay-Extralight justify-center text-center items-center px-2 py-2 hover:text-white w-auto rounded-3xl"
                 href={item.DemoLink}
-                aria-label={`View demo for ${item.ProjectName}`}
+                aria-label={`View demo for ${item.DemoLink}`}
               >
                 Live Demo
               </a>
@@ -106,6 +105,7 @@ function Project() {
           </span>
         </div>
       ))}
+      <Footer />
     </motion.div>
   );
 }

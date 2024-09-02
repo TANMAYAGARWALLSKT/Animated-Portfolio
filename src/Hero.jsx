@@ -12,7 +12,7 @@ function Hero() {
         <motion.h1 className="text-[8vw]  font-bold font-serif w-auto">
           Tanmay Agarwal
         </motion.h1>
-        <motion.h1 className="text-[2vw] assistant-text  w-auto">
+        <motion.h1 className="text-[2vw]  ClashDisplay-light  w-auto">
           <Splittext duration={1} delay={0.05}>
             Front End Developer
           </Splittext>

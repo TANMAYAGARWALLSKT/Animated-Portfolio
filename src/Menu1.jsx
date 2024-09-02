@@ -1,10 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { motion } from "framer-motion";
-import { LiaTimesSolid } from "react-icons/lia";
-import MyCanvasComponent from "./Threejs/MyCanvasComponent";
-import FlipLink from "./Framer Motion Effect/FlipLink";
 import { Link } from "react-router-dom";
 import { Howl } from "howler";
+import FlipLink from "./Framer Motion Effect/FlipLink";
+
+// Lazy load MyCanvasComponent
+const MyCanvasComponent = React.lazy(() =>
+  import("./Threejs/MyCanvasComponent")
+);
 
 function Menu1({ change }) {
   const menuOptions = [
@@ -14,43 +17,52 @@ function Menu1({ change }) {
     { Navlink: "/Download CV", Header: "Download CV" },
   ];
 
-  const CloseIt = () => {
-    change(false);
-  };
+  let sound, click;
 
-  const sound = new Howl({
-    src: ["whoosh-cinematic.mp3"],
-    loop: false,
-    volume: 1,
-  });
-  const Click = new Howl({
-    src: ["interface.mp3"],
-    loop: false,
-    volume: 1,
-  });
+  React.useEffect(() => {
+    sound = new Howl({
+      src: ["whoosh-cinematic.mp3"],
+      loop: false,
+      volume: 1,
+    });
+    click = new Howl({
+      src: ["interface.mp3"],
+      loop: false,
+      volume: 1,
+    });
+
+    return () => {
+      sound.unload();
+      click.unload();
+    };
+  }, []);
+
+  const handleMenuClick = (navlink) => {
+    change(false);
+    sound.play();
+  };
 
   return (
     <motion.div
-      className="flex justify-between"
+      className="sticky-menu flex justify-between w-screen min-h-screen h-full"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
     >
       {/* 3D Canvas Component */}
-      <div className="w-[75vw] overflow-hidden p-2 rounded-xl flex justify-center">
-        <MyCanvasComponent />
+      <div className="w-[75vw] p-2 rounded-xl flex justify-center">
+        <Suspense fallback={<div>Loading...</div>}>
+          <MyCanvasComponent />
+        </Suspense>
       </div>
 
       {/* Menu Options */}
-      <div className="text-4xl flex flex-col justify-center items-end pr-10 h-screen w-[35vw] gap-10">
-        {menuOptions.map((item, index) => (
+      <div className="text-4xl flex flex-col justify-center items-end pr-10 w-full gap-10">
+        {menuOptions.map((item) => (
           <motion.span
-            onClick={() => {
-              CloseIt();
-              sound.play();
-            }}
-            key={index}
+            onClick={() => handleMenuClick(item.Navlink)}
+            key={item.Navlink}
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}

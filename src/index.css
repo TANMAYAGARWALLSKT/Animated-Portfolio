@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("Fonts/css/satoshi.css");
+@import url("Fonts/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,29 +9,13 @@
   height: 1px;
   background-color: transparent;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-html,
-body {
-  cursor: none;
+html {
+  background-color: #0a0908;
+}
+#root {
+  background-color: #0a0908;
 }
 
-.luckiest-guy {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-.assistant-text {
-  font-family: "Assistant", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-}
 .blur-my {
   background-color: rgba(47, 47, 45, 0.635);
   backdrop-filter: blur(30px);
@@ -50,4 +36,20 @@ body {
 }
 a {
   cursor: none;
+}
+.Satoshi {
+  font-family: "ClashDisplay-Semibold";
+}
+.ClashDisplay-Medium {
+  font-family: "ClashDisplay-Medium";
+}
+.ClashDisplay-light {
+  font-family: "ClashDisplay-light";
+}
+.ClashDisplay-Extralight {
+  font-family: "ClashDisplay-Extralight";
+}
+.ClashDisplay-bold {
+  font-family: "ClashDisplay-Bold";
+  font-weight: 900;
 }
