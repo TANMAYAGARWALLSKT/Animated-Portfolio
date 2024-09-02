@@ -22,7 +22,7 @@ function MyCanvasComponent() {
         <Bloom intensity={1} />
       </EffectComposer>
       <OrbitControls
-        enablePan={false}
+        enablePan={true}
         autoRotate
         rotateSpeed={1}
         autoRotateSpeed={1}

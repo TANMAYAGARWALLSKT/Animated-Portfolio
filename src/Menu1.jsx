@@ -43,36 +43,38 @@ function Menu1({ change }) {
   };
 
   return (
-    <motion.div
-      className="sticky-menu flex justify-between w-screen min-h-screen h-full"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.5 }}
-    >
-      {/* 3D Canvas Component */}
-      <div className="w-[75vw] p-2 rounded-xl flex justify-center">
-        <Suspense fallback={<div>Loading...</div>}>
-          <MyCanvasComponent />
-        </Suspense>
-      </div>
+    <motion.div className="relative h-[500vh] bg-black ">
+      <motion.div
+        className=" sticky top-0 left-0 h-screen w-full flex justify-between min-h-screen blur-my"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.5 }}
+      >
+        {/* 3D Canvas Component */}
+        <div className="w-[75vw] p-2 rounded-xl flex justify-center">
+          <Suspense fallback={<div>Loading...</div>}>
+            <MyCanvasComponent />
+          </Suspense>
+        </div>
 
-      {/* Menu Options */}
-      <div className="text-4xl flex flex-col justify-center items-end pr-10 w-full gap-10">
-        {menuOptions.map((item) => (
-          <motion.span
-            onClick={() => handleMenuClick(item.Navlink)}
-            key={item.Navlink}
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-          >
-            <Link to={item.Navlink}>
-              <FlipLink>{item.Header}</FlipLink>
-            </Link>
-          </motion.span>
-        ))}
-      </div>
+        {/* Menu Options */}
+        <div className="text-7xl flex flex-col justify-center items-end pr-10 w-full gap-10">
+          {menuOptions.map((item) => (
+            <motion.span
+              onClick={() => handleMenuClick(item.Navlink)}
+              key={item.Navlink}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+            >
+              <Link to={item.Navlink}>
+                <FlipLink>{item.Header}</FlipLink>
+              </Link>
+            </motion.span>
+          ))}
+        </div>
+      </motion.div>
     </motion.div>
   );
 }

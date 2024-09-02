@@ -40,7 +40,7 @@ function Router() {
         ) : (
           <motion.div
             key="menu-content"
-            className="absolute top-0 right-0 z-50 bg-[#0a0908] blur-my min-h-screen h-full w-screen"
+            className="absolute top-0 right-0 z-50 bg-[#0a0908]  min-h-screen h-full w-screen"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

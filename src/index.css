@@ -34,9 +34,7 @@ html {
     rgba(210, 203, 203, 0.221) 120%
   );
 }
-a {
-  cursor: none;
-}
+
 .Satoshi {
   font-family: "ClashDisplay-Semibold";
 }
