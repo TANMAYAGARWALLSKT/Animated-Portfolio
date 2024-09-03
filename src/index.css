@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("Fonts/css/satoshi.css");
-@import url("Fonts/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css");
+@import url("Fonts/Satoshi_Font_Complete/css/satoshi.css");
+@import url("Fonts/ClashDisplay_Complete/WEB/css/clash-display.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

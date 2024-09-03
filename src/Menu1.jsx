@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Howl } from "howler";
 import FlipLink from "./Framer Motion Effect/FlipLink";
+import { LiaTimesSolid } from "react-icons/lia";
 
 // Lazy load MyCanvasComponent
 const MyCanvasComponent = React.lazy(() =>
@@ -13,8 +14,8 @@ function Menu1({ change }) {
   const menuOptions = [
     { Navlink: "/", Header: "Home" },
     { Navlink: "/Project", Header: "Project" },
-    { Navlink: "/About Me", Header: "About Me" },
-    { Navlink: "/Download CV", Header: "Download CV" },
+    { Navlink: "/AboutMe", Header: "About Me" },
+    { Navlink: "/Resume", Header: "Download CV" },
   ];
 
   let sound, click;

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import FlipLink from "./Framer Motion Effect/FlipLink";
 import Footer from "./Footer";
+import OtherLoader from "./OtherLoader";
 
 function Project() {
   const projects = [
