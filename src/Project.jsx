@@ -26,7 +26,7 @@ function Project() {
       CustomClassHeader:
         "border-b-2 border-white/50 flex-row-reverse text-center md:text-start flex items-center",
       Video: "./video2.mp4",
-      ButtonClass: "md:justify-center sm:justify-center items-center",
+      ButtonClass: "md:justify-center sm:justify-center justify-center items-center",
     },
     {
       ProjectName: "SaaS App",
@@ -37,7 +37,7 @@ function Project() {
       CustomClass: "md:w-[40%] w-full text-center",
       CustomClassHeader: "border-white/50 text-center md:text-end flex items-center",
       Video: "./video2.mp4",
-      ButtonClass: "md:justify-center sm:justify-center items-center",
+      ButtonClass: "md:justify-center sm:justify-center justify-center items-center",
     },
   ];
 
