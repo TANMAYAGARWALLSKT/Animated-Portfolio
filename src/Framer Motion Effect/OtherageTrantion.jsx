@@ -14,10 +14,10 @@ function OtherageTrantion() {
       initial={{ y: "100vh" }}
       animate={{ y: "-160vh", display: "none" }}
       transition={{ duration: 1.0, ease: [0.42, 0, 0.58, 1] }} // Smooth easing
-      className="absolute top-0 left-0 z-[9999]   w-full "
+      className="absolute top-0 left-0 z-[9999] w-full"
     >
       <motion.div
-        className="flex gap-5 flex-row  h-auto  "
+        className="flex gap-2  flex-row h-auto"
         initial="hidden"
         animate="visible"
         variants={{
@@ -37,7 +37,7 @@ function OtherageTrantion() {
               duration: child.duration,
               ease: [0.42, 0, 0.58, 1], // Custom easing for smooth transition
             }}
-            className="w-[25%] h-screen"
+            className="w-full md:w-1/3 lg:w-1/4 h-screen"
             style={{
               backgroundColor: child.color,
               willChange: "transform, opacity", // Optimize for smoother animations

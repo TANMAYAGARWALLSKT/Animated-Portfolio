@@ -46,7 +46,7 @@ function Menu1({ change }) {
     <motion.div className="relative min-h-screen bg-black overflow-hidden blur-my">
       <motion.div className="sticky top-0 left-0 h-screen w-full flex flex-col lg:flex-row items-center justify-between">
         {/* 3D Canvas Component */}
-        <div className="p-2  flex justify-center w-[100vw]  h-[100vh] lg:relative md:relative sm:absolute  top-0 left-0">
+        <div className="p-2  flex justify-center w-[100vw]  h-[100vh] lg:relative md:relative sm:absolute flex-wrap top-0 left-0">
           <Suspense
             fallback={
               <div className="flex justify-center text-center ClashDisplay-bold text-white">
