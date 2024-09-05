@@ -43,13 +43,13 @@ function Menu1({ change }) {
   };
 
   return (
-    <motion.div className="relative min-h-screen bg-black overflow-hidden blur-my">
+    <motion.div className="relative min-h-screen bg-black overflow-hidden">
       <motion.div className="sticky top-0 left-0 h-screen w-full flex flex-col lg:flex-row items-center justify-between">
         {/* 3D Canvas Component */}
-        <div className="p-2  flex justify-center w-[100vw]  h-[100vh] lg:relative md:relative sm:absolute flex-wrap top-0 left-0">
+        <div className="p-2 flex justify-center w-full h-full lg:h-screen lg:w-1/2">
           <Suspense
             fallback={
-              <div className="flex justify-center text-center ClashDisplay-bold text-white">
+              <div className="flex justify-center items-center text-center ClashDisplay-bold text-white">
                 Loading...
               </div>
             }
@@ -59,7 +59,7 @@ function Menu1({ change }) {
         </div>
 
         {/* Menu Options */}
-        <div className="flex flex-col justify-center lg:justify-end items-end lg:items-end pr-10 lg:pr-20 gap-6 lg:gap-10 text-white">
+        <div className="flex flex-col justify-center items-center lg:items-end pr-4 lg:pr-20 gap-6 lg:gap-10 text-white w-full lg:w-1/2">
           {menuOptions.map((item) => (
             <motion.span
               onClick={() => handleMenuClick(item.Navlink)}
@@ -67,7 +67,7 @@ function Menu1({ change }) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl cursor-pointer"
             >
               <Link to={item.Navlink}>
                 <FlipLink>{item.Header}</FlipLink>
