@@ -43,10 +43,10 @@ function Menu1({ change }) {
   };
 
   return (
-    <motion.div className=" absolute z-[9] top-0 left-0 blur-my h-[200vh] ">
-      <motion.div className="sticky top-0  left-0 h-screen w-screen   flex  justify-between">
+    <motion.div className=" absolute z-[900] top-0 left-0 blur-my h-[200vh] ">
+      <motion.div className="sticky top-0  left-0 h-screen w-screen justify-between   flex  sm:justify-start sm:flex-row flex-wrap  items-center">
         {/* 3D Canvas Component */}
-        <div className="p-2 flex  justify-center items-center w-1/3 lg:w-1/2 h-screen lg:h-screen sm:h-1/3">
+        <div className=" flex  justify-start items-center w-screen h-1/3 lg:w-1/2 lg:h-screen sm:h-1/3">
           <Suspense
             fallback={
               <div className="flex justify-center items-center text-center  text-lg">
