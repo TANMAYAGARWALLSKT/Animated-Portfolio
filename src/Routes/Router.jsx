@@ -23,7 +23,7 @@ function Router() {
               setMenu(true);
               playSound();
             }}
-            className="magnet-target absolute top-4 z-50 right-8"
+            className="magnet-target absolute top-4 z-[990] right-8"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}

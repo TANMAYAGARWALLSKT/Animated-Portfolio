@@ -15,7 +15,7 @@ html {
 }
 
 .blur-my {
-  background-color: rgba(47, 47, 45, 0.635);
+  background-color: rgb(47, 47, 45);
   backdrop-filter: blur(30px);
 }
 .margee-bg {
