@@ -12,30 +12,30 @@ function Marquee() {
   const [Techwidth, setTechStack] = useState(0);
 
   const techStackItems = [
-    { component: <FaHtml5 className="w-[6vw] sm:w-[8vw]" />, key: "html5" },
-    { component: <FaCss3 className="w-[6vw] sm:w-[8vw]" />, key: "css3" },
-    { component: <FaJs className="w-[6vw] sm:w-[8vw]" />, key: "js" },
-    { component: <FaReact className="w-[6vw] sm:w-[8vw]" />, key: "react" },
+    { component: <FaHtml5 className="w-[10vw] sm:w-[8vw]" />, key: "html5" },
+    { component: <FaCss3 className="w-[10vw] sm:w-[8vw]" />, key: "css3" },
+    { component: <FaJs className="w-[10vw] sm:w-[8vw]" />, key: "js" },
+    { component: <FaReact className="w-[10vw] sm:w-[8vw]" />, key: "react" },
     {
-      component: <RiTailwindCssFill className="w-[6vw] sm:w-[8vw]" />,
+      component: <RiTailwindCssFill className="w-[10vw] sm:w-[8vw]" />,
       key: "tailwind",
     },
     {
-      component: <GiSteamLocomotive className="w-[6vw] sm:w-[8vw]" />,
+      component: <GiSteamLocomotive className="w-[10vw] sm:w-[8vw]" />,
       key: "locomotive",
     },
     {
-      component: <SiGreensock className="w-[6vw] sm:w-[8vw]" />,
+      component: <SiGreensock className="w-[10vw] sm:w-[8vw]" />,
       key: "greensock",
     },
     {
       component: (
-        <img className="w-[6vw] sm:w-[8vw]" src="/lenis svg.svg" alt="Lenis" />
+        <img className="w-[10vw] sm:w-[8vw]" src="/lenis svg.svg" alt="Lenis" />
       ),
       key: "lenis",
     },
     {
-      component: <PiFramerLogo className="w-[6vw] sm:w-[8vw]" />,
+      component: <PiFramerLogo className="w-[10vw] sm:w-[8vw]" />,
       key: "Framers",
     },
     { component: <FaHtml5 className="w-[6vw] sm:w-[8vw]" />, key: "html51" },
