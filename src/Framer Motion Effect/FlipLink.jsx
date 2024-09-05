@@ -10,7 +10,7 @@ const FlipLink = ({ children, href }) => {
       initial="initial"
       whileHover="hovered"
       href={href}
-      className="relative block overflow-hidden cursor-none whitespace-nowrap   font-black uppercase "
+      className="relative block overflow-hidden cursor-none whitespace-nowrap  font-black uppercase "
       style={{
         lineHeight: 0.75,
       }}
@@ -31,7 +31,7 @@ const FlipLink = ({ children, href }) => {
               ease: "easeInOut",
               delay: STAGGER * i,
             }}
-            className="inline-block"
+            className="inline-block "
             key={i}
           >
             {l === " " ? "\u00A0" : l}
