@@ -7,6 +7,7 @@ function OtherageTrantion() {
     { color: "#18181b", yOffset: "20vh", duration: 2 },
     { color: "#f6cba3", yOffset: "30vh", duration: 2 },
     { color: "#18181b", yOffset: "40vh", duration: 2 },
+    { color: "#f6cba3", yOffset: "30vh", duration: 2 },
   ];
 
   return (
@@ -37,7 +38,7 @@ function OtherageTrantion() {
               duration: child.duration,
               ease: [0.42, 0, 0.58, 1], // Custom easing for smooth transition
             }}
-            className="w-full md:w-1/3 lg:w-1/4 h-screen"
+            className="w-1/5 md:w-1/5 lg:w-1/5 h-screen"
             style={{
               backgroundColor: child.color,
               willChange: "transform, opacity", // Optimize for smoother animations

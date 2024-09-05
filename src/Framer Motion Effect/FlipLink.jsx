@@ -31,7 +31,7 @@ const FlipLink = ({ children, href }) => {
               ease: "easeInOut",
               delay: STAGGER * i,
             }}
-            className="inline-block "
+            className="inline-block"
             key={i}
           >
             {l === " " ? "\u00A0" : l}

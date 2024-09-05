@@ -12,30 +12,58 @@ function Marquee() {
   const [Techwidth, setTechStack] = useState(0);
 
   const techStackItems = [
-    { component: <FaHtml5 className="h-[8vw]" />, key: "html5" },
-    { component: <FaCss3 className="h-[8vw]" />, key: "css3" },
-    { component: <FaJs className="h-[8vw]" />, key: "js" },
-    { component: <FaReact className="h-[8vw]" />, key: "react" },
-    { component: <RiTailwindCssFill className="h-[8vw]" />, key: "tailwind" },
-    { component: <GiSteamLocomotive className="h-[8vw]" />, key: "locomotive" },
-    { component: <SiGreensock className="h-[8vw]" />, key: "greensock" },
+    { component: <FaHtml5 className="w-[6vw] sm:w-[8vw]" />, key: "html5" },
+    { component: <FaCss3 className="w-[6vw] sm:w-[8vw]" />, key: "css3" },
+    { component: <FaJs className="w-[6vw] sm:w-[8vw]" />, key: "js" },
+    { component: <FaReact className="w-[6vw] sm:w-[8vw]" />, key: "react" },
     {
-      component: <img className="h-[8vw]" src="/lenis svg.svg" />,
+      component: <RiTailwindCssFill className="w-[6vw] sm:w-[8vw]" />,
+      key: "tailwind",
+    },
+    {
+      component: <GiSteamLocomotive className="w-[6vw] sm:w-[8vw]" />,
+      key: "locomotive",
+    },
+    {
+      component: <SiGreensock className="w-[6vw] sm:w-[8vw]" />,
+      key: "greensock",
+    },
+    {
+      component: (
+        <img className="w-[6vw] sm:w-[8vw]" src="/lenis svg.svg" alt="Lenis" />
+      ),
       key: "lenis",
     },
-    { component: <PiFramerLogo className="h-[8vw]" />, key: "Framers" },
-    { component: <FaHtml5 className="h-[8vw]" />, key: "html51" },
-    { component: <FaCss3 className="h-[8vw]" />, key: "css32" },
-    { component: <FaJs className="h-[8vw]" />, key: "js2" },
-    { component: <FaReact className="h-[8vw]" />, key: "reac2t" },
-    { component: <RiTailwindCssFill className="h-[8vw]" />, key: "tailwind2" },
-    { component: <GiSteamLocomotive className="h-[8vw]" />, key: "locomotive2" },
-    { component: <SiGreensock className="h-[8vw]" />, key: "greensock2" },
     {
-      component: <img className="h-[8vw]" src="/lenis svg.svg" />,
+      component: <PiFramerLogo className="w-[6vw] sm:w-[8vw]" />,
+      key: "Framers",
+    },
+    { component: <FaHtml5 className="w-[6vw] sm:w-[8vw]" />, key: "html51" },
+    { component: <FaCss3 className="w-[6vw] sm:w-[8vw]" />, key: "css32" },
+    { component: <FaJs className="w-[6vw] sm:w-[8vw]" />, key: "js2" },
+    { component: <FaReact className="w-[6vw] sm:w-[8vw]" />, key: "reac2t" },
+    {
+      component: <RiTailwindCssFill className="w-[6vw] sm:w-[8vw]" />,
+      key: "tailwind2",
+    },
+    {
+      component: <GiSteamLocomotive className="w-[6vw] sm:w-[8vw]" />,
+      key: "locomotive2",
+    },
+    {
+      component: <SiGreensock className="w-[6vw] sm:w-[8vw]" />,
+      key: "greensock2",
+    },
+    {
+      component: (
+        <img className="w-[6vw] sm:w-[8vw]" src="/lenis svg.svg" alt="Lenis" />
+      ),
       key: "lenis2",
     },
-    { component: <PiFramerLogo className="h-[8vw]" />, key: "Framers2" },
+    {
+      component: <PiFramerLogo className="w-[6vw] sm:w-[8vw]" />,
+      key: "Framers2",
+    },
   ];
 
   useEffect(() => {
@@ -51,7 +79,7 @@ function Marquee() {
         x: {
           repeat: Infinity,
           repeatType: "loop",
-          duration: width / 100, // Dynamic duration for consistent speed
+          duration: width / 50, // Dynamic duration for consistent speed
           ease: "linear",
         },
       },
@@ -59,17 +87,17 @@ function Marquee() {
   };
 
   return (
-    <div className="absolute bottom-10 flex flex-col justify-start text-[#ffc79336] w-full">
+    <div className="absolute bottom-0 flex flex-col justify-start text-[#ffc79336] w-full overflow-hidden">
       <motion.div
         ref={Tech}
-        className="h-auto w-auto luckiest-guy text-[10vw] flex gap-[5vw]"
+        className="h-auto flex gap-4 sm:gap-8 whitespace-nowrap"
         variants={marqueeVariants}
         animate="animate"
         custom={Techwidth}
       >
         {techStackItems.map((item) => (
           <motion.span
-            className="h-auto w-auto hover:scale-110 transition-transform duration-300 ease-in-out hover:text-[#f6cba3]"
+            className="h-auto inline-block hover:scale-110 transition-transform duration-300 ease-in-out hover:text-[#f6cba3]"
             key={item.key}
           >
             {item.component}

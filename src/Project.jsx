@@ -10,7 +10,7 @@ function Project() {
         "I developed a dynamic web application for exploring creative thinking strategies using HTML, CSS, JavaScript, GSAP, and Tailwind CSS. The app features interactive exercises like mind mapping and SCAMPER, with smooth animations powered by GSAP. Tailwind CSS was utilized to create a responsive and modern UI, while JavaScript enabled seamless interaction. This project highlights my ability to combine front-end technologies to build engaging and educational web experiences.",
       DemoLink: "https://group3cts.vercel.app/",
       CodeLink: "https://github.com/TANMAYAGARWALLSKT/nehul",
-      CustomClass: "md:w-[40%] w-full text-center",
+      CustomClass: "md:w-[40%] lg:w-[40%] w-full md:text-end sm:text-center lg:text-end ",
       CustomClassHeader:
         "border-b-2 border-t-2 border-white/50 text-end md:text-center items-center",
       Video: "./video2.mp4",
@@ -22,7 +22,7 @@ function Project() {
         "In this Bubble Game, the player's goal is to click on the correct number from a group of bubbles displayed on the screen. A random target number is generated at the top, and the player must find and click the matching number among the bubbles below.",
       DemoLink: "https://bubble-game-three-iota.vercel.app/main.html",
       CodeLink: "https://github.com/TANMAYAGARWALLSKT/BubbleGame",
-      CustomClass: "md:w-[46%] w-full text-center",
+      CustomClass: "md:w-[40%] w-full text-center",
       CustomClassHeader:
         "border-b-2 border-white/50 flex-row-reverse text-start md:text-center items-center",
       Video: "./video2.mp4",
@@ -34,7 +34,7 @@ function Project() {
         "This SaaS application is designed to help users efficiently manage their financial data, including tracking income, expenses, total income, total cash in, and cash out. With a user-friendly interface and robust backend, users can seamlessly monitor their financial activities and export their data to Excel for further analysis or record-keeping.",
       DemoLink: "https://manage-income-exp-mmbd.vercel.app/User",
       CodeLink: "https://github.com/TANMAYAGARWALLSKT/Manage-Income---Exp",
-      CustomClass: "md:w-[32%] w-full text-center",
+      CustomClass: "md:w-[40%] w-full text-center",
       CustomClassHeader: "border-white/50 text-end md:text-center items-center",
       Video: "./video2.mp4",
       ButtonClass: "md:justify-center sm:justify-center items-center",
@@ -78,7 +78,9 @@ function Project() {
             loop
             preload="metadata"
           />
-          <span className={`text-3xl md:text-4xl flex flex-col gap-5 ${item.CustomClass}`}>
+          <span
+            className={`text-3xl md:text-4xl flex flex-col gap-5 ${item.CustomClass}`}
+          >
             <span className="flex flex-col ClashDisplay-Medium text-5xl md:text-7xl text-center">
               {item.ProjectName}
             </span>
