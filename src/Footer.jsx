@@ -4,7 +4,7 @@ import { GoArrowUpRight } from "react-icons/go";
 
 function Footer() {
   return (
-    <div className="bg-[#0a0908] mt-14 border-y-2 mb-10 border-white/50 text-[5vw] md:text-[2.5vw] lg:text-[1.5vw] Satoshi flex flex-col md:flex-row leading-tight">
+    <div className="bg-[#0a0908] mt-14 border-y-2 mb-10 border-white/50 text-[5vw] md:text-[2.5vw] lg:text-[1.5vw] Satoshi flex flex-col md:flex-row flex-wrap leading-tight">
       <div className="flex text-[8vw] md:text-[4vw] lg:text-[2.5vw] w-full md:w-screen">
         <div className="hover:text-red-500 border-r-2 w-full md:w-1/4 flex flex-row gap-5 h-full items-center justify-center transition-all duration-300">
           <span>Gmail</span>
