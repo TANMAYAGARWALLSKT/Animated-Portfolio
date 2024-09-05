@@ -10,9 +10,9 @@ function Project() {
         "I developed a dynamic web application for exploring creative thinking strategies using HTML, CSS, JavaScript, GSAP, and Tailwind CSS. The app features interactive exercises like mind mapping and SCAMPER, with smooth animations powered by GSAP. Tailwind CSS was utilized to create a responsive and modern UI, while JavaScript enabled seamless interaction. This project highlights my ability to combine front-end technologies to build engaging and educational web experiences.",
       DemoLink: "https://group3cts.vercel.app/",
       CodeLink: "https://github.com/TANMAYAGARWALLSKT/nehul",
-      CustomClass: "md:w-[40%] lg:w-[40%] w-full md:text-end sm:text-center lg:text-end ",
+      CustomClass: "md:w-[40%] lg:w-[40%] w-full text-center md:text-end",
       CustomClassHeader:
-        "border-b-2 border-t-2 border-white/50 text-end md:text-center items-center",
+        "border-b-2 border-t-2 border-white/50 text-center md:text-end flex items-center",
       Video: "./video2.mp4",
       ButtonClass: "md:justify-center sm:justify-center justify-center items-center",
     },
@@ -24,7 +24,7 @@ function Project() {
       CodeLink: "https://github.com/TANMAYAGARWALLSKT/BubbleGame",
       CustomClass: "md:w-[40%] w-full text-center",
       CustomClassHeader:
-        "border-b-2 border-white/50 flex-row-reverse text-start md:text-center items-center",
+        "border-b-2 border-white/50 flex-row-reverse text-center md:text-start flex items-center",
       Video: "./video2.mp4",
       ButtonClass: "md:justify-center sm:justify-center items-center",
     },
@@ -35,7 +35,7 @@ function Project() {
       DemoLink: "https://manage-income-exp-mmbd.vercel.app/User",
       CodeLink: "https://github.com/TANMAYAGARWALLSKT/Manage-Income---Exp",
       CustomClass: "md:w-[40%] w-full text-center",
-      CustomClassHeader: "border-white/50 text-end md:text-center items-center",
+      CustomClassHeader: "border-white/50 text-center md:text-end flex items-center",
       Video: "./video2.mp4",
       ButtonClass: "md:justify-center sm:justify-center items-center",
     },
@@ -46,7 +46,7 @@ function Project() {
       initial={{ y: 1000, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.8, ease: "circInOut" }}
-      className=""
+      className="px-4 md:px-8 lg:px-12"
     >
       <div className="text-6xl md:text-8xl lg:text-9xl ClashDisplay-Medium uppercase flex pt-10 pl-5 pb-8 text-center">
         <span>My Projects</span>
@@ -66,7 +66,7 @@ function Project() {
             }
           }}
           key={index}
-          className={`w-full flex flex-col md:flex-row p-5 justify-between h-auto gap-5 ${item.CustomClassHeader}`}
+          className={`w-full flex flex-col md:flex-row p-5 justify-center md:justify-between h-auto gap-5 ${item.CustomClassHeader}`}
         >
           <motion.video
             initial={{ scale: 0.5, opacity: 0 }}

@@ -1,5 +1,4 @@
-@import url("Fonts/Satoshi_Font_Complete/css/satoshi.css");
-@import url("Fonts/ClashDisplay_Complete/WEB/css/clash-display.css");
+@import url("/Fonts/ClashDisplay_Complete/WEB/css/clash-display.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

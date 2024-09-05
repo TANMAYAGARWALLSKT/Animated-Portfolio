@@ -90,7 +90,7 @@ function Marquee() {
     <div className="absolute bottom-0 flex flex-col justify-start text-[#ffc79336] w-full overflow-hidden">
       <motion.div
         ref={Tech}
-        className="h-auto flex gap-4 sm:gap-8 whitespace-nowrap"
+        className="h-auto flex gap-10 sm:gap-10 "
         variants={marqueeVariants}
         animate="animate"
         custom={Techwidth}
