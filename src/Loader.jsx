@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react";
 import Hero from "./Hero";
 import { AnimatePresence, motion } from "framer-motion";
 import Splittext from "./Framer Motion Effect/Splittext";
-import { Howl, Howler } from "howler";
+import { Howl } from "howler";
 
-// Import audio files
+// Import video files
+const videoSources = [
+  "./video0.mp4",
+  "./video1.mp4",
+  "./video2.mp4",
+  // Add more videos here
+];
 
 function Loader() {
   const [RenderPage, setRenderPage] = useState(false);
@@ -28,15 +34,27 @@ function Loader() {
       });
     };
 
-    // Load all audio files
+    // Function to preload video files
+    const preloadVideo = (src) => {
+      return new Promise((resolve) => {
+        const video = document.createElement("video");
+        video.src = src;
+        video.preload = "auto";
+        video.oncanplaythrough = () => resolve();
+        video.onerror = () => resolve(); // Handle error case
+      });
+    };
+
+    // Load all assets
     const loadAssets = async () => {
       await Promise.all([
         preloadAudio(boomAudioSrc),
         preloadAudio(interfaceAudioSrc),
         preloadAudio(loadingAudioSrc),
+        ...videoSources.map(preloadVideo), // Preload videos
       ]);
 
-      setRenderPage(true); // Set renderPage to true once all audio files are preloaded
+      setRenderPage(true); // Set renderPage to true once all assets are preloaded
       setShowLoader(false); // Hide loader
     };
 
