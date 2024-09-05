@@ -24,12 +24,12 @@ function Menu1({ change }) {
     sound = new Howl({
       src: ["whoosh-cinematic.mp3"],
       loop: false,
-      volume: 1,
+      volume: 0.5,
     });
     click = new Howl({
       src: ["interface.mp3"],
       loop: false,
-      volume: 1,
+      volume: 0.5,
     });
 
     return () => {
@@ -44,17 +44,17 @@ function Menu1({ change }) {
   };
 
   return (
-    <motion.div className="relative h-[500vh] bg-black ">
-      <motion.div
-        className=" sticky top-0 left-0 h-screen w-full flex justify-between min-h-screen blur-my"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.5 }}
-      >
+    <motion.div className="relative h-[500vh] bg-black blur-my ">
+      <motion.div className=" sticky top-0 left-0 h-screen w-full flex justify-between min-h-screen ">
         {/* 3D Canvas Component */}
         <div className="w-[75vw] p-2 rounded-xl flex justify-center">
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div className="flex justify-center text-center ClashDisplay-bold">
+                Loading...
+              </div>
+            }
+          >
             <MyCanvasComponent />
           </Suspense>
         </div>

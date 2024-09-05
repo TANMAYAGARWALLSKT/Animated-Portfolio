@@ -20,6 +20,7 @@ function Loader() {
         const sound = new Howl({
           src: [src],
           html5: true,
+          volume: 0.5,
           onload: () => resolve(),
           onloaderror: () => resolve(), // Handle error case
         });
@@ -43,7 +44,7 @@ function Loader() {
     new Howl({
       src: ["Loading.mp3"],
       loop: false,
-      volume: 1,
+      volume: 0.5,
     }).play();
   }, []);
   // Play loading audio when renderPage is true

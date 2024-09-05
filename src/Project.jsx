@@ -14,8 +14,9 @@ function Project() {
       CodeLink: "https://github.com/TANMAYAGARWALLSKT/nehul",
       CustomClass: "w-[40%]",
       CustomClassHeader:
-        "border-b-2 border-t-2 border-white/50 text-end items-center",
+        "border-b-2 border-t-2 border-white/50 text-end items-center ",
       Video: "./video2.mp4",
+      ButtonClass: "justify-end items-center",
     },
     {
       ProjectName: "Bubble Game",
@@ -27,6 +28,7 @@ function Project() {
       CustomClassHeader:
         "border-b-2 border-white/50 flex-row-reverse text-start items-center ",
       Video: "./video2.mp4",
+      ButtonClass: "justify-start items-center",
     },
     {
       ProjectName: "SaaS App",
@@ -37,14 +39,15 @@ function Project() {
       CustomClass: "w-[32%]",
       CustomClassHeader: " border-white/50 text-end items-center",
       Video: "./video2.mp4",
+      ButtonClass: "justify-end items-center",
     },
   ];
 
   return (
     <motion.div
-      initial={{ y: 1000, scale: 0.5, opacity: 0 }}
-      animate={{ y: 0, scale: 1, opacity: 1 }}
-      transition={{ duration: 1, ease: "circInOut" }}
+      initial={{ y: 1000, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.8, ease: "circInOut" }}
       className=""
     >
       <div className="   text-9xl ClashDisplay-Medium uppercase flex  pt-10 pl-5 pb-8      ">
@@ -70,7 +73,6 @@ function Project() {
           <motion.video
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.5, opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="w-[30%] rounded"
             src={item.Video}
@@ -87,7 +89,7 @@ function Project() {
             <p className="text-sm pl-5 pt-5 ClashDisplay-light">
               {item.Description}
             </p>
-            <div className="flex gap-5  justify-center items-center">
+            <div className={`flex gap-5 ${item.ButtonClass} `}>
               <a
                 className=" text-2xl  hover:bg-green-800 hover:text-white w-auto rounded-3xl flex justify-center items-center px-5 py-1 ClashDisplay-Extralight "
                 href={item.CodeLink}

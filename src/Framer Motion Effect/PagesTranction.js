@@ -1,23 +1,31 @@
 export const pageVariants = {
   initial: {
-    opacity: 0,
-    y: "-100vh",
-    scale: 0.8,
+    y: "100vh",
   },
   in: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
+    y: "-140vh",
+    display: "none",
+
     transition: {
-      duration: 0.5,
+      delay: 0.3,
+      duration: 1,
+      ease: "easeInOut",
     },
   },
   out: {
-    opacity: 0,
-    y: "100vh",
-    scale: 0.8,
+    y: "-140vh",
     transition: {
-      duration: 0.5,
+      duration: 1,
+      ease: "easeInOut",
     },
   },
 };
+// initial={{
+//
+// }}
+// animate={{
+//
+// }}
+// exit={{
+//
+// }}
