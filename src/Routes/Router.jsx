@@ -49,58 +49,10 @@ function Router() {
         </motion.div>
       )}
       <Routes location={location} key={location.pathname}>
-        <Route
-          path="/"
-          element={
-            <motion.div
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={pageVariants}
-            >
-              <Loader />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/Menu"
-          element={
-            <motion.div
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={pageVariants}
-            >
-              <Menu1 />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/AboutMe"
-          element={
-            <motion.div
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={pageVariants}
-            >
-              <About />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/Project"
-          element={
-            <motion.div
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={pageVariants}
-            >
-              <Project />
-            </motion.div>
-          }
-        />
+        <Route path="/" element={<Loader />} />
+        <Route path="/Menu" element={<Menu1 />} />
+        <Route path="/AboutMe" element={<About />} />
+        <Route path="/Project" element={<Project />} />
       </Routes>
     </AnimatePresence>
   );

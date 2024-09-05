@@ -1,12 +1,12 @@
 export const pageVariants = {
   initial: {
     opacity: 0,
-    x: "-100vw",
+    y: "-100vh",
     scale: 0.8,
   },
   in: {
     opacity: 1,
-    x: 0,
+    y: 0,
     scale: 1,
     transition: {
       duration: 0.5,
@@ -14,7 +14,7 @@ export const pageVariants = {
   },
   out: {
     opacity: 0,
-    x: "100vw",
+    y: "100vh",
     scale: 0.8,
     transition: {
       duration: 0.5,
