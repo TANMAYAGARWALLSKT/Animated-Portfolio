@@ -44,9 +44,9 @@ function Menu1({ change }) {
 
   return (
     <motion.div className=" relative z-[900] top-0 left-0 blur-my h-[400vh] ">
-      <motion.div className="sticky top-0 left-0 justify-center blur-my flex flex-wrap w-screen h-screen  sm:justify-center sm:flex-row sm:flex-nowrap  gap-5  items-center">
+      <motion.div className="sticky top-0 left-0 justify-center blur-my flex flex-wrap w-screen h-screen   sm:justify-center sm:flex-row sm:flex-nowrap  gap-5  items-center">
         {/* 3D Canvas Component */}
-        <div className=" flex  justify-center items-center w-screen h-[55vh] lg:w-1/2 lg:h-screen sm:h-1/3">
+        <div className=" flex  justify-center items-center w-screen h-[70vh] lg:w-1/2 lg:h-screen sm:h-1/3">
           <Suspense
             fallback={
               <div className="flex justify-center items-center text-center  text-lg">
@@ -59,7 +59,7 @@ function Menu1({ change }) {
         </div>
 
         {/* Menu Options */}
-        <div className="flex  flex-col justify-center items-center text-center lg:items-end   lg:pr-20 gap-2 lg:gap-10 w-auto lg:w-1/2 h-auto">
+        <div className="flex  flex-col justify-center items-center text-center lg:items-end  h-[30vh]  lg:pr-20 gap-2 lg:gap-10 w-auto lg:w-1/2 ">
           {menuOptions.map((item) => (
             <motion.span
               onClick={() => handleMenuClick(item.Navlink)}
