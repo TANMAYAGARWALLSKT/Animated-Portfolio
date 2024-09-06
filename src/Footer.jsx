@@ -31,7 +31,7 @@ function Footer() {
           </span>
         </div>
 
-        <div className="flex w-full md:w-1/4 flex-col border-l-2  mx-auto  h-full">
+        <div className="flex w-full md:w-1/4 flex-col border-l-2 gap-2  mx-auto  h-full">
           <span className="mx-auto my-auto">
             <span className="mx-auto my-auto">
               <FlipLink>About Me</FlipLink>
