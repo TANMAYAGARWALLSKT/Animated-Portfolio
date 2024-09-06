@@ -31,13 +31,12 @@ function Footer() {
           </span>
         </div>
 
-        <div className="flex w-full md:w-1/4 flex-col border-l-2  mx-auto  gap-5  h-full">
+        <div className="flex w-full md:w-1/4 flex-col border-l-2  mx-auto  h-full">
           <span className="mx-auto my-auto">
-            {" "}
+            <span className="mx-auto my-auto">
+              <FlipLink>About Me</FlipLink>
+            </span>{" "}
             <FlipLink>My Resume</FlipLink>
-          </span>
-          <span className="mx-auto my-auto">
-            <FlipLink>About Me</FlipLink>
           </span>
         </div>
       </div>
