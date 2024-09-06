@@ -23,7 +23,7 @@ function Router() {
               setMenu(true);
               playSound();
             }}
-            className="magnet-target absolute top-4 z-[90] right-8"
+            className="magnet-target absolute top-4 z-[800] right-8"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
@@ -45,7 +45,7 @@ function Router() {
                 setMenu(false);
                 playSound();
               }}
-              className="absolute top-4 right-8 w-10 h-10 text-white"
+              className="absolute top-4 right-8 w-10 z-[990]  h-10 text-white"
             />
             <Menu1 change={setMenu} />
           </motion.div>

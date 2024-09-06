@@ -76,7 +76,7 @@ function Loader() {
             key="loader"
             exit={{ y: -1000, scale: 0.5 }}
             transition={{ duration: 1, ease: "circInOut" }}
-            className="w-screen h-screen flex justify-center z-[1000] absolute  items-center"
+            className="w-screen h-screen flex justify-center absolute z-[999] bg-black   items-center"
           >
             <motion.div className="BoxLoader h-screen  w-screen rounded-3xl   flex text-center justify-center items-center mx-auto my-auto luckiest-guy text-4xl sm:text-5xl md:text-6xl lg:text-8xl">
               <Splittext duration={2} delay={0.15}>
