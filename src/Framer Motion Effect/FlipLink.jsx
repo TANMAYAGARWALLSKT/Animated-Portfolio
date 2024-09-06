@@ -1,21 +1,55 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { delay, motion } from "framer-motion";
 
 const FlipLink = ({ children, href }) => {
   const DURATION = 0.25;
   const STAGGER = 0.025;
+  const [hovered, setHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    if (isMobile) {
+      const interval = setInterval(() => {
+        setHovered((prev) => !prev);
+      }, 1000); // Perform every 5 seconds
+
+      return () => clearInterval(interval);
+    }
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobile]);
+
+  // Define parent variants
+  const parentVariants = {
+    initial: {},
+    hovered: {
+      transition: {
+        staggerChildren: STAGGER,
+      },
+    },
+  };
 
   return (
     <motion.span
       initial="initial"
-      whileHover="hovered"
+      animate={hovered ? "hovered" : "initial"}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
       href={href}
-      className="relative block overflow-hidden cursor-none whitespace-nowrap  font-black uppercase "
+      className="relative block overflow-hidden cursor-none whitespace-nowrap font-black uppercase"
       style={{
         lineHeight: 0.75,
       }}
     >
-      <div>
+      <motion.div
+        variants={parentVariants} // Apply staggered animation to child spans
+      >
         {children.split("").map((l, i) => (
           <motion.span
             variants={{
@@ -29,7 +63,6 @@ const FlipLink = ({ children, href }) => {
             transition={{
               duration: DURATION,
               ease: "easeInOut",
-              delay: STAGGER * i,
             }}
             className="inline-block"
             key={i}
@@ -37,8 +70,11 @@ const FlipLink = ({ children, href }) => {
             {l === " " ? "\u00A0" : l}
           </motion.span>
         ))}
-      </div>
-      <div className="absolute inset-0 text-red-500">
+      </motion.div>
+      <motion.div
+        className="absolute inset-0 text-red-500"
+        variants={parentVariants} // Apply staggered animation to child spans
+      >
         {children.split("").map((l, i) => (
           <motion.span
             variants={{
@@ -52,7 +88,6 @@ const FlipLink = ({ children, href }) => {
             transition={{
               duration: DURATION,
               ease: "easeInOut",
-              delay: STAGGER * i,
             }}
             className="inline-block"
             key={i}
@@ -60,8 +95,9 @@ const FlipLink = ({ children, href }) => {
             {l === " " ? "\u00A0" : l}
           </motion.span>
         ))}
-      </div>
+      </motion.div>
     </motion.span>
   );
 };
+
 export default FlipLink;
