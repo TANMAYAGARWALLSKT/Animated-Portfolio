@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FlipLink from "./Framer Motion Effect/FlipLink";
 import { GoArrowUpRight } from "react-icons/go";
 
 function Footer() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    if (isMobile) {
+      const interval = setInterval(() => {
+        setHovered((prev) => !prev);
+      }, 1000); // Perform every 5 seconds
+
+      return () => clearInterval(interval);
+    }
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobile]);
   return (
     <div className="bg-[#0a0908] mt-14 border-y-2 mb-10 border-white/50 text-[5vw] md:text-[2.5vw] lg:text-[1.5vw] Satoshi flex flex-col md:flex-row flex-wrap leading-tight">
       <div className="flex text-[8vw] md:text-[4vw] lg:text-[2.5vw] w-full md:w-screen flex-wrap mx-auto ">
@@ -31,14 +50,26 @@ function Footer() {
           </span>
         </div>
 
-        <div className="flex w-full md:w-1/4 flex-col border-l-2 gap-4  mx-auto  h-full">
-          <span className="mx-auto my-auto">
-            <span className="mx-auto my-auto">
+        {isMobile ? (
+          <div className="w-full flex gap-2 border-t-2 py-2 justify-center flex-wrap">
+            <span className="mx-auto ">
               <FlipLink>About Me</FlipLink>
-            </span>{" "}
-            <FlipLink>My Resume</FlipLink>
-          </span>
-        </div>
+            </span>
+            <span>
+              {" "}
+              <FlipLink>My Resume</FlipLink>
+            </span>
+          </div>
+        ) : (
+          <div className="flex w-full md:w-1/4 flex-col border-l-2 gap-4  mx-auto  h-full">
+            <span className="mx-auto my-auto">
+              <span className="mx-auto my-auto">
+                <FlipLink>About Me</FlipLink>
+              </span>{" "}
+              <FlipLink>My Resume</FlipLink>
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );
