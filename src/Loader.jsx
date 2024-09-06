@@ -59,7 +59,7 @@ function Loader() {
       }, 1500);
       // Hide loader
     };
-   
+
     loadAssets();
     new Howl({
       src: ["Loading.mp3"],
@@ -79,7 +79,7 @@ function Loader() {
             className="w-screen h-screen flex justify-center absolute z-[999] bg-black   items-center"
           >
             <motion.div className="BoxLoader h-screen  w-screen rounded-3xl   flex text-center justify-center items-center mx-auto my-auto luckiest-guy text-4xl sm:text-5xl md:text-6xl lg:text-8xl">
-              <Splittext duration={2} delay={0.15}>
+              <Splittext duration={1.5} delay={0.15} repeat={Infinity}>
                 Hello
               </Splittext>
             </motion.div>

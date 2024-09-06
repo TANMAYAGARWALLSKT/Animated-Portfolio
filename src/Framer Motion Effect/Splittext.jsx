@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
-function Splittext({ children, duration, delay }) {
+function Splittext({ children, duration, delay, repeat }) {
   const [splitchildren, setSplitChildren] = useState([]);
 
   const easeSettings = {
     duration: duration,
     ease: "easeInOut",
     delay: delay, // Stagger the animation of each character
+    repeat: repeat, // Repeat the animation if the string is longer than the splitted array length
   };
 
   useEffect(() => {
@@ -26,6 +27,7 @@ function Splittext({ children, duration, delay }) {
           animate={{ opacity: 1 }}
           transition={{
             ...easeSettings,
+
             delay: index * delay, // Stagger the animation of each character
           }}
         >
