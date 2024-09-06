@@ -23,15 +23,15 @@ function Footer() {
     return () => window.removeEventListener("resize", handleResize);
   }, [isMobile]);
   return (
-    <div className="bg-[#0a0908] mt-14 border-y-2 mb-10 border-white/50 text-[5vw] md:text-[2.5vw] lg:text-[1.5vw] Satoshi flex flex-col md:flex-row flex-wrap leading-tight">
+    <div className="bg-[#0a0908] mt-14  border-2 sm:border-y-2 mb-10 border-white/50 text-[5vw] md:text-[2.5vw] lg:text-[1.5vw] Satoshi flex flex-col md:flex-row flex-wrap leading-tight">
       <div className="flex text-[8vw] md:text-[4vw] lg:text-[2.5vw] w-full md:w-screen flex-wrap mx-auto ">
-        <div className="hover:text-red-500  border-r-2 w-full mx-auto md:w-1/4 flex flex-row gap-5 h-full  transition-all duration-300">
+        <div className="hover:text-red-500  sm:border-r-2 w-full mx-auto md:w-1/4 flex flex-row gap-5 h-full  transition-all duration-300">
           <span className="mx-auto my-auto ">
             Gmail{" "}
             <GoArrowUpRight className="inline-block mx-auto transition-transform transform hover:-translate-y-4 hover:translate-x-4" />
           </span>
         </div>
-        <div className="hover:text-purple-500  border-r-2  w-full md:w-1/4 flex flex-row gap-5 mx-auto h-full  transition-all duration-300">
+        <div className="hover:text-purple-500  sm:border-r-2  w-full md:w-1/4 flex flex-row gap-5 mx-auto h-full  transition-all duration-300">
           <span
             className="
           mx-auto my-auto"
@@ -51,7 +51,7 @@ function Footer() {
         </div>
 
         {isMobile ? (
-          <div className="w-full flex gap-2 border-t-2 py-2 justify-center flex-wrap">
+          <div className="w-full flex gap-2 py-2 justify-center flex-wrap">
             <span className="mx-auto ">
               <FlipLink>About Me</FlipLink>
             </span>
