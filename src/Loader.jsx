@@ -53,11 +53,13 @@ function Loader() {
         preloadAudio(loadingAudioSrc),
         ...videoSources.map(preloadVideo), // Preload videos
       ]);
-
-      setRenderPage(true); // Set renderPage to true once all assets are preloaded
-      setShowLoader(false); // Hide loader
+      setTimeout(() => {
+        setRenderPage(true); // Set renderPage to true once all assets are preloaded
+        setShowLoader(false);
+      }, 1500);
+      // Hide loader
     };
-
+   
     loadAssets();
     new Howl({
       src: ["Loading.mp3"],
